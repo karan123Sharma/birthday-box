@@ -1,0 +1,19 @@
+<section class="favorites">
+  <div class="favorites__inner">
+    <div class="favorites__header">
+      <h2 class="favorites__heading" appInview="animate-fade-up">Main character energy, every time</h2>
+      <p class="favorites__sub" appInview="animate-fade-up" animateDelay="150ms">no matter the pfp, she always ate.</p>
+    </div>
+
+    <div class="favorites__grid">
+      @for (card of cards; track card.caption; let i = $index) {
+        <div class="fav-card" appInview="animate-scale-in" [animateDelay]="(i * 120) + 'ms'">
+          <div class="fav-card__image">
+            <img [src]="card.image" [alt]="card.caption" />
+          </div>
+          <p class="fav-card__caption">{{ card.caption }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>

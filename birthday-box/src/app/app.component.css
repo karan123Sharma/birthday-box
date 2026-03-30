@@ -1,0 +1,8 @@
+.app {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.app > :nth-child(even) {
+  background: var(--bg-dark-alt);
+}

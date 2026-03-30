@@ -1,0 +1,167 @@
+.letter {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 40px 160px;
+  overflow: hidden;
+}
+
+/* ── Merged center blobs ── */
+
+.letter__blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(160px);
+  opacity: 0.4;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.letter__blob--lavender {
+  width: 500px;
+  height: 500px;
+  background: var(--lavender);
+  top: 50%;
+  left: 50%;
+  transform: translate(-65%, -55%);
+}
+
+.letter__blob--pink {
+  width: 450px;
+  height: 450px;
+  background: var(--pink);
+  top: 50%;
+  left: 50%;
+  transform: translate(-35%, -45%);
+}
+
+/* ── Inner container ── */
+
+.letter__inner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: var(--section-max);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ── Glass card (80% width as spec) ── */
+
+.letter__card {
+  width: 80%;
+  max-width: 700px;
+  padding: 56px 48px;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 32px;
+  box-shadow: 0 8px 60px rgba(0, 0, 0, 0.25);
+}
+
+.letter__greeting {
+  font-family: 'Dancing Script', cursive;
+  font-size: clamp(32px, 4.5vw, 46px);
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 32px;
+}
+
+.letter__body {
+  font-size: clamp(14px, 1.8vw, 16px);
+  font-weight: 300;
+  color: var(--light-gray);
+  line-height: 1.9;
+  margin-bottom: 40px;
+  white-space: pre-line;
+}
+
+.letter__sign-off {
+  font-family: 'Dancing Script', cursive;
+  font-size: clamp(26px, 3.5vw, 36px);
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 12px;
+}
+
+.letter__sender {
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--muted);
+  letter-spacing: 0.5px;
+}
+
+/* ── CTA Button ── */
+
+.letter__cta {
+  position: relative;
+  margin-top: 48px;
+  padding: 18px 44px;
+  border: none;
+  border-radius: 50px;
+  background: linear-gradient(135deg, var(--lavender), var(--pink));
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 30px rgba(184, 169, 232, 0.4), 0 0 60px rgba(232, 169, 200, 0.2);
+}
+
+.letter__cta:hover {
+  transform: scale(1.06);
+  box-shadow: 0 0 44px rgba(184, 169, 232, 0.65), 0 0 90px rgba(232, 169, 200, 0.35);
+}
+
+.letter__cta-glow {
+  position: absolute;
+  inset: -3px;
+  border-radius: 50px;
+  background: linear-gradient(135deg, var(--lavender), var(--pink));
+  filter: blur(16px);
+  opacity: 0.45;
+  z-index: -1;
+}
+
+.letter__cta-text {
+  font-family: var(--font-body);
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--white);
+  letter-spacing: 0.4px;
+}
+
+/* ── Responsive ── */
+
+@media (max-width: 600px) {
+  .letter {
+    padding: 80px 24px 160px;
+  }
+
+  .letter__card {
+    width: 100%;
+    padding: 36px 28px;
+  }
+
+  .letter__cta {
+    padding: 16px 32px;
+  }
+
+  .letter__cta-text {
+    font-size: 15px;
+  }
+
+  .letter__blob--lavender {
+    width: 320px;
+    height: 320px;
+  }
+
+  .letter__blob--pink {
+    width: 280px;
+    height: 280px;
+  }
+}

@@ -1,0 +1,15 @@
+<section class="letter">
+  <!-- Merged blobs in the center -->
+  <div class="letter__blob letter__blob--lavender"></div>
+  <div class="letter__blob letter__blob--pink"></div>
+
+  <div class="letter__inner">
+    <!-- Glass card -->
+    <div class="letter__card" appInview="animate-blur-in">
+      <p class="letter__greeting" appInview="animate-fade-up" animateDelay="300ms">Dear {{ recipientName }},</p>
+      <p class="letter__body" appInview="animate-fade-up" animateDelay="500ms">{{ letterBody }}</p>
+      <p class="letter__sign-off" appInview="animate-fade-up" animateDelay="700ms">{{ signOff }}</p>
+      <p class="letter__sender" appInview="animate-fade-in" animateDelay="900ms">{{ sender }}</p>
+    </div>
+  </div>
+</section>

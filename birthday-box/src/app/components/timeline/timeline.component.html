@@ -1,0 +1,28 @@
+<section class="timeline">
+  <div class="timeline__inner">
+    <div class="timeline__header">
+      <h2 class="timeline__heading" appInview="animate-fade-up">{{ heading }}</h2>
+      <p class="timeline__sub" appInview="animate-fade-up" animateDelay="150ms">{{ subheading }}</p>
+    </div>
+
+    <div class="timeline__track">
+      @for (ms of milestones; track ms.title; let i = $index; let last = $last) {
+        <div class="timeline__item" appInview="animate-fade-left" [animateDelay]="(i * 150) + 'ms'">
+          <div class="timeline__rail">
+            <div class="timeline__dot">
+              <span class="timeline__dot-emoji">{{ ms.emoji }}</span>
+            </div>
+            @if (!last) {
+              <div class="timeline__line"></div>
+            }
+          </div>
+
+          <div class="timeline__content">
+            <h3 class="timeline__title">{{ ms.title }}</h3>
+            <p class="timeline__desc">{{ ms.description }}</p>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

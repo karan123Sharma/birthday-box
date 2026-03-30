@@ -1,0 +1,61 @@
+<section class="landing">
+  <!-- Background blobs -->
+  <div class="blob blob--lavender"></div>
+  <div class="blob blob--pink"></div>
+
+  <div class="landing__content">
+    <!-- Top text -->
+    <div class="landing__header">
+      <p class="landing__subtitle" appInview="animate-fade-up">To my favorite notification...</p>
+      <h1 class="landing__title" appInview="animate-blur-in" animateDelay="200ms">Happy Birthday,<br />Akira</h1>
+    </div>
+
+    <!-- Center image -->
+    <div class="landing__image-wrapper" appInview="animate-scale-in" animateDelay="500ms">
+      <div class="landing__image-placeholder">
+        @if (heroImage) {
+          <img [src]="heroImage" alt="A picture of us" class="landing__image" />
+        } @else {
+          <div class="landing__image-fallback">
+            <span>📸</span>
+            <p>your photo here</p>
+          </div>
+        }
+      </div>
+    </div>
+
+    <div class="landing__spacer"></div>
+  </div>
+
+  <!-- Audio player (fixed bottom) -->
+  <div class="player">
+    <div class="player__glass">
+      <div class="player__album">
+        @if (albumCover) {
+          <img [src]="albumCover" alt="Album cover" />
+        } @else {
+          <div class="player__album-fallback">🎵</div>
+        }
+      </div>
+
+      <div class="player__info">
+        <span class="player__song">{{ songTitle }}</span>
+        <span class="player__artist">{{ artistName }}</span>
+      </div>
+
+      <button class="player__btn" (click)="togglePlay()" [attr.aria-label]="isPlaying ? 'Pause' : 'Play'">
+        <span class="player__btn-icon" [class.player__btn-icon--playing]="isPlaying">
+          {{ isPlaying ? '⏸' : '▶' }}
+        </span>
+      </button>
+    </div>
+
+    <button class="player__scroll-hint" (click)="scrollDown()">
+      Click to start the vibe &amp; scroll down 👇
+    </button>
+  </div>
+
+  <audio #audioPlayer loop preload="auto">
+    <source src="Itni Si Baat Hain Azhar 320 Kbps.mp3" type="audio/mpeg" />
+  </audio>
+</section>

@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/app.component.css"],
+  "sourcesContent": [".app {\n  width: 100%;\n  min-height: 100vh;\n}\n\n.app > :nth-child(even) {\n  background: var(--bg-dark-alt);\n}\n"],
+  "mappings": ";AAAA,CAAC;AACC,SAAO;AACP,cAAY;AACd;AAEA,CALC,IAKI,EAAE;AACL,cAAY,IAAI;AAClB;",
+  "names": []
+}
